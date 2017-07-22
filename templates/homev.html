@@ -1,0 +1,72 @@
+  {% for org in organizations %}
+    <div style="float: left;">
+    {% if loop.index%3==1 %}
+    <a style="text-decoration: none;" href="{{url_for('place',place_id=org.id)}}">
+    <div class="flip"> 
+        <div class="front"> 
+            <img src="{{org.profile}}" alt="" />
+        </div> 
+        <div class="back">
+            <h3>{{org.shortdescription}}</h3>
+        </div> 
+    </div>
+    </div>
+    </a>
+{% endif %}
+</div>
+{% if loop.index%3==2 %}
+    <a href="{{url_for('place',place_id=org.id)}}">
+<div style="float: left;margin-left: 2em;">
+<div class="flip"> 
+    <div class="front"> 
+        <img src="{{org.profile}}" alt="" />
+    </div> 
+    <div class="back">
+        <h3><a style="text-decoration: none;" href="{{url_for('place',place_id=org.id)}}">{{org.shortdescription}}</a></h3>
+    </div> 
+</div>
+</div>
+</div>
+</a>
+{% endif %}
+
+{% if loop.index%3==0 %}
+    <a href="{{url_for('place',place_id=org.id)}}">
+<div style="float: left;margin-left: 2em;">
+<div class="flip"> 
+    <div class="front"> 
+        <img src="{{org.profile}}" alt="" />
+    </div> 
+    <div class="back">
+        <h3><a style="text-decoration: none;" href="{{url_for('place',place_id=org.id)}}">{{org.shortdescription}}</a></h3>
+    </div> 
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+</div>
+</a>
+
+
+
+
+{% endif%}
+{% endfor %}
+</div>
+</div>
+
+
+
+

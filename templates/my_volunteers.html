@@ -1,0 +1,25 @@
+{% extends "templateorg.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>My volunteers</h1>
+{% for i in my %}
+{% for u in v %}
+{% if i.id == u.id %}
+{% if i.accepted == 1 %}
+
+	<a href = "{{url_for('volunteer_profile', user_id = i.id)}}"><p>Name: {{u.name}} </p></a>
+
+
+{% endif %}
+{% endif %}
+
+{% endfor %}
+{% endfor %}
+</body>
+</html>
+{% endblock %}

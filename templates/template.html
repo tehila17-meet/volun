@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <title>Volunpeer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="/static/scripts/jquery.flip.min.js"></script>
+  <script type="text/javascript" src="\static\scripts\functions.js"></script>
+{% block css %}
+{% endblock %}
+{% block script %}
+{% endblock %}
+</head>
+<body>
+<ul>
+  <li><a href="#Profile"><span style="cursor:pointer" onclick="openNav()">&#9776; <i class="fa fa-align-justify" style="color:white"></i></span></a></li>
+  <li><a href="{{url_for('homevol')}}"><span class="glyphicon glyphicon-home"></span></a></li>
+  <li><a><button type="button" class="invis" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-search"></span></button></a></li>
+  <li style="float:right"><a href="#Logout">Logout <span class="glyphicon glyphicon-log-out"></span></a></li>
+  <li style="float:right"><a href="#Aboutus">About Us</a></li>
+  <li><a>Volunteering hours done: </a></li>
+  <li><a style="float:middle">
+  <div class="w3-light-grey" style="width:300px">
+  <div class="w3-container w3-green w3-center" style="width:25%">{{precent}}% </div>
+  
+	</div></a></li>
+  </ul>
+<div class="container">
+  <!-- Trigger the modal with a button -->
+
+  <!-- Modal -->
+  <form action="{{url_for('search')}}" method = "post">
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Search <span class="glyphicon glyphicon-search"></span></h4>
+        </div>
+        <div class="modal-body">
+          <p><input type="text" name="place" style="width:100%"></p>
+        </div>
+        <div class="modal-footer">
+        <input type="submit" class="btn btn-success" value="Search">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+</div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href = "{{url_for('homevol')}}">Home</a>
+  <a href="{{url_for('volunteer_calendar')}}">My Calendar</a>
+  <a href="{{url_for('find')}}">Find a place to volunteer</a>
+
+  <a href="">Confirmations</a>
+  <a href="{{url_for('about_us')}}"> About us</a>
+  <a href="{{url_for('contact')}}"> Contact us</a>
+
+
+</div>
+{% block body %}
+{% endblock %}
+</body>
+
+</html>

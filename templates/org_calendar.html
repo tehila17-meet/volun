@@ -1,0 +1,31 @@
+{% extends "templateorg.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<span style="font-family: monospace;"><iframe src="https://calendar.google.com/calendar/embed?src=sgk3vv0b1i506nvp4pjrquf2nc%40group.calendar.google.com&ctz=Asia/Jerusalem" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe> </span>
+{% for i in my %}
+{% for u in v %}
+{% if i.id == u.id %}
+{% if i.accepted == 1 %}
+
+	<p>Name: {{u.name}} </p>
+
+
+{% endif %}
+{% endif %}
+
+{% endfor %}
+{% endfor %}
+
+<link type=”text/css” rel=”stylesheet” href=”969ff39784188d8d017a0c60c8f2558aembedcompiled_fastui.css”>
+<script type=”text/javascript” src=”969ff39784188d8d017a0c60c8f2558aembedcompiled__en_gb.js”></script>
+
+
+
+</body>
+</html>
+{% endblock %}

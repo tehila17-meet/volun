@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<title> Volunpeer </title>
+<body>
+<div cSlass="W3-top", style='float right'>
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card-2" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">Gourmet au Catering</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#home" class="w3-bar-item w3-button">Home</a>
+      <a href="#studenthome" class="w3-bar-item w3-button">Student home</a>
+      <a href="#" class="w3-bar-item w3-button">Organization</a>
+      <a href="#about" class="w3-bar-item w3-button">Home</a>
+      <a href="#about" class="w3-bar-item w3-button">Home</a>
+
+    </div>
+  </div>
+</div> \\fix the urls
+
+</div>

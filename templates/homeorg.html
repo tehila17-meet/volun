@@ -1,0 +1,125 @@
+{% extends "templateorg.html" %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center><h1> Welcome {{org.name}}</h1></center>
+<h2>Requests</h2>
+
+{% for i in all_requests %}
+
+{% for u in volunteers %}
+
+	{% if i.id == u.id %}
+
+
+	{% if i.accepted == 0 %}
+
+
+	<h4>Name: <strong>{{u.name}}</strong></h4>
+	
+	
+
+			<h4>Start time {{i.start_time}} </h4>
+
+
+		
+
+	
+	<h4>How many hours: {{i.length}} </h4>
+
+	<h4> Date: {{i.date}}</h4>
+	
+
+<form action = "{{url_for('accept',nominee_id = i.id)}}" method = "post">
+
+<input type = "submit" value = "Accept">
+
+</form>
+
+<form action = "{{url_for('reject',nominee_id = i.id)}}" method = "post">
+
+<input type = "submit" value = "Reject">
+
+</form>
+{% endif %}
+{% endif %}
+
+
+
+
+
+
+
+
+{% endfor %}
+
+{% endfor %}
+
+
+<h2>Hours/Feedback Requests</h2>
+
+{% for a in  all_hour_requests %}
+{% for z in volunteers %}
+
+	{% if a.id == z.id %}
+	
+
+	{% if a.worked == 0 %}
+
+
+	<p>Name: {{z.name}} </p>
+
+<form action = "{{url_for('confirm_hours',nominee_id = a.id)}}" method = "post">
+
+<input type = "submit" value = "Accept">
+
+</form>
+
+
+
+{% endif %}
+{% endif %}
+
+
+
+
+{% endfor %}
+{% endfor %}
+
+
+<br> 
+<br>
+<br>
+{% for b in all_feedback %}
+{% for v in volunteers %}
+
+{% if b.id == v.id %}
+
+
+{% if b.feedback == None %}
+
+<p>Name:{{v.name}}</p>
+
+<form action = "{{url_for('confirm_feedback',nominee_id = b.id)}}" method = "post">
+<input type = "text" name = "feedback"> 
+<input type = "submit" value = "Send">
+
+</form>
+
+{% endif %}
+
+{% endif %}
+
+
+{% endfor %}
+{% endfor %}
+
+
+
+</body>
+</html>
+{% endblock %}

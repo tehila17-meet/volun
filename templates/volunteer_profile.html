@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+
+
+
+<body>
+<div class="container" style="padding-top: 60px;">
+  <h1 class="page-header">Profile</h1>
+  <div class="row">
+    <!-- left column -->
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="text-center">
+        <img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar">
+        <h6>Upload a your photo</h6>
+        <input type="file" class="text-center center-block well well-sm">
+      </div>
+    </div>
+    <!-- edit form column -->
+    <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+      <h3>Personal info</h3>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="col-lg-3 control-label">First name:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="{{user.name}}" type="text" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">interests:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="{{user.interests}}" type="text" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">email:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="{{user.email}}" type="email" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">address:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="{{user.address}}" type="text" disabled>
+          </div>
+        </div>
+        <!-- <div class="form-group"> -->
+          <!-- <label class="col-lg-3 control-label">Time Zone:</label> -->
+          <!-- <div class="col-lg-8"> -->
+            <!-- <div class="ui-select"> -->
+              <!-- <select id="user_time_zone" class="form-control"> -->
+                <!-- <option value="Hawaii">(GMT-10:00) Hawaii</option> -->
+                <!-- <option value="Alaska">(GMT-09:00) Alaska</option> -->
+                <!-- <option value="Pacific Time (US & Canada)">(GMT-08:00) Pacific Time (US & Canada)</option> -->
+                <!-- <option value="Arizona">(GMT-07:00) Arizona</option> -->
+                <!-- <option value="Mountain Time (US & Canada)">(GMT-07:00) Mountain Time (US & Canada)</option> -->
+                <!-- <option value="Central Time (US & Canada)" selected="selected">(GMT-06:00) Central Time (US & Canada)</option> -->
+                <!-- <option value="Eastern Time (US & Canada)">(GMT-05:00) Eastern Time (US & Canada)</option> -->
+                <!-- <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option> -->
+              <!-- </select> -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
+        <div class="form-group">
+          <label class="col-md-3 control-label">Username:</label>
+          <div class="col-md-8">
+            <input class="form-control" value="{{user.username}}" type="text" disabled>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="col-md-3 control-label">phonenumber:</label>
+          <div class="col-md-8">
+            <input class="form-control" value="{{user.phonenumber}}" type="text" disabled>
+          </div>
+        </div>
+        <!-- <div class="form-group"> -->
+          <!-- <label class="col-md-3 control-label"></label> -->
+          <!-- <div class="col-md-8"> -->
+            <!-- <input class="btn btn-primary" value="Save Changes" type="button"> -->
+            <!-- <span></span> -->
+            <!-- <input class="btn btn-default" value="Cancel" type="reset"> -->
+          <!-- </div> -->
+        <!-- </div> -->
+      </form>
+    </div>
+  </div>
+</div>
+</body>

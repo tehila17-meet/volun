@@ -1,0 +1,202 @@
+<DOCTYPE! html>
+
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="\static\scripts\functions.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+form {
+    
+}
+
+input[type=text], input[type=password], input[type=number], input[type=date], input[type=email]{
+    width: 25%;
+    background-color: #3fbfbb;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-color:  white;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #3fbfbb;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-color:white;
+    cursor: pointer;
+    width: 20%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+ <nav style="background-color:white; color:#3fbfbb" id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div id="vol-header" class="navbar-header page-scroll">
+                <img src={{url_for('static',filename='logo.png')}} width="40" height="50"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <!-- <span><img class="img-responsive" src="/static/bootstrap-img/logo.png" alt=""></span> -->
+            </div>
+                <a style="color:#3fbfbb;" class="navbar-brand" href="#page-top">Volunpeer</a>   
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div style="color:black" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                       <li class="page-scroll">
+                        <a href="#portfolio">Home</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">Student</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Organization</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+
+
+
+<center>
+<h1 style="color: gray "> Sign up </h2>
+
+
+
+<form action = "{{url_for('signup')}}" method = "post" enctype="multipart/form-data">
+
+
+<input type="email" placeholder="Enter Email" name="email"><br>
+<input type="text" placeholder="Enter Name" name="name"><br>
+<input type="password" placeholder="Enter Password" name="password"><br>
+<input type = "text" placeholder="City" name = "city">
+<input type = "text" placeholder="School" name= "school">
+<input type="radio"  name="gender">Male
+<input type="radio"  name="gender">Female
+<br>
+<input type = "text" name ="about" placeholder="Short bio">
+<h2 style="color: gray"> enter your interests </h2>
+<input type="text" name="interests" id="interests">
+<p onclick="fill('Community','1','interests')">
+<kbd id="1">Community</kbd>
+</p>
+<a onclick="fill('Children & Youth','2','interests')"><br>
+  <kbd id="2">Children & Youth </kbd>
+</a>
+<a onclick="fill('Education & Literacy','3','interests')"><br>
+  <kbd id="3">Education & Literacy </kbd>
+</a>
+<a onclick="fill('Health & Medicine','4','interests')"><br>
+  <kbd id="4">Health & Medicine </kbd>
+</a>
+<a onclick="fill('Seniors','5','interests')"><br>
+  <kbd id="5">Seniors </kbd>
+</a>
+<a onclick="fill('International','6','interests')"><br>
+  <kbd id="6">International </kbd>
+</a>
+<a onclick="fill('Arts & Culture','7','interests')"><br>
+  <kbd id="7">Arts & Culture </kbd>
+</a>
+<a onclick="fill('Environment','8','interests')"><br>
+  <kbd id="8">Environment </kbd>
+</a>
+<a onclick="fill('Disabled','9','interests')"><br>
+  <kbd id="9">Disabled </kbd>
+</a>
+<a onclick="fill('Sports & Recreation','10','interests')"><br>
+  <kbd id="10">Sports & Recreation </kbd>
+</a><br>
+<br>
+<h2 style="color: gray"> Add a profile picture</h2><br><input type="file" name="profile"><br>
+<br>
+<input type="number" placeholder="phone number" name="phonenumber"><br>
+<input type="text" style="display: none;" name="interests"><br>
+<input type="date" name="birthday"><br>
+<input type="text" name="pastorganizations" placeholder="organizations that you have volunteered in"><br>
+<input type="number" name="goal" placeholder="goal hours"><br>
+
+<input type="submit" class="btn btn-info" style="" name="Submit" value="submit"><br>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes style="color: red;font-size: 20px;margin-right: 30px">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
+
+
+</form>
+
+
+</body>
+</html>
